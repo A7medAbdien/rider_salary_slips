@@ -1,0 +1,142 @@
+<div class="body">
+    <!--<h1>{{doc.structure_type}}</h1>-->
+    {% if 'PKG' in doc.structure_type %}
+    <img src="/files/PKG Letter head.jpg" style="width: 100%; height: 150px" />
+    {% else %}
+    <img src="/files/keyarabia.jpeg" style="width: 100%; height: 150px" />
+    {% endif %}
+
+    <div class="print-heading">
+        <div
+            class="flex-row"
+            style="justify-content: space-between; position: relative"
+        >
+            <h2>
+                <div>Salary Slip</div>
+            </h2>
+            <p
+                style="
+                    font-size: 8px;
+                    position: absolute;
+                    bottom: 0px;
+                    right: 0;
+                "
+            >
+                TRN # 220011877600002
+            </p>
+        </div>
+        <hr style="background-color: black; height: 2px; margin: 0" />
+    </div>
+
+    <div class="flex-row" style="justify-content: end">
+        <div class="flex-col" style="width: fit-content">
+            <div class="text-right">Date Issued: {{ doc.date_issue}}</div>
+            <div class="text-right">Ref: {{ doc.ref or doc.name}}</div>
+        </div>
+    </div>
+
+    <br />
+
+    <table class="my-table" style="font-size: 15px; font-weight: 600">
+        <tr>
+            <td>Company</td>
+            <td>{{ doc.company }}</td>
+        </tr>
+        <tr>
+            <td>Rider Name</td>
+            <td>{{ doc.rider_name }}</td>
+        </tr>
+        <tr>
+            <td>Rider ID</td>
+            <td>{{ doc.rider_id }}</td>
+        </tr>
+        <tr>
+            <td>Rider CPR</td>
+            <td>{{ doc.rider_cpr }}</td>
+        </tr>
+    </table>
+
+    <br />
+    <table class="date-table" style="font-size: 17px">
+        <tr>
+            <td class="text-left">Payroll Month:</td>
+            <td class="text-right">
+                {{ doc.payroll_month }}
+                {{frappe.utils.get_datetime(doc.start_date).strftime("%Y") }}
+            </td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td class="text-left">Start Date:</td>
+            <td class="text-right">{{ doc.start_date }}</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td class="text-left">End Date:</td>
+            <td class="text-right">{{ doc.end_date }}</td>
+            <td class="text-left">Payment Mode:</td>
+            <td class="text-right">{{ doc.mode_of_payment }}</td>
+        </tr>
+    </table>
+
+    <div class="flex-row">
+        <h3 style="text-decoration: underline">Particulars</h3>
+    </div>
+
+    <table class="my-table">
+        <thead>
+            <tr>
+                <td>Sr.</td>
+                <td>Components</td>
+                <td style="text-align: center">Qty</td>
+                <td style="text-align: center">Amount</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in doc.salary_components %}
+            <tr>
+                <td>{{ loop.index }}</td>
+                <td>{{ item.component_name }}</td>
+                <td style="text-align: center">
+                    {% if item.variable > 0 %} {{ item.variable }} {% endif %}
+                </td>
+                <td style="text-align: center">
+                    {{ '%0.3f'|format(item.amount|float) }}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="flex-row" style="justify-content: end">
+        <div class="text-right total">
+            Total Payable: {{
+            '%0.3f'|format(doc.salary_components[-1].amount|float) }} BHD
+        </div>
+    </div>
+    <!--<br />-->
+    <table class="my-table">
+        <tr>
+            <td style="border: 0; text-align: center">
+                ADDRESS: BLOCK NO: 327, ROAD NO 2721, BLDG NO 1105, ADLIYA,
+                KINGDOM OF BAHRAIN
+            </td>
+        </tr>
+        <tr class="">
+            <td style="border: 0; text-align: center">
+                Phone: 17601516/33610093
+            </td>
+        </tr>
+    </table>
+    <!--<div class="flex-row footer">-->
+    <!--    <div class="flex-col">-->
+    <!--        <div class="">-->
+    <!--            ADDRESS: BLOCK NO: 327, ROAD NO 2721, BLDG NO 1105, ADLIYA,-->
+    <!--            KINGDOM OF BAHRAIN-->
+    <!--        </div>-->
+    <!--        <div class="">Phone: 17601516/33610093</div>-->
+    <!--    </div>-->
+    <!--</div>-->
+</div>

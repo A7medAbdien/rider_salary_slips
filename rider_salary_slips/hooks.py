@@ -129,6 +129,12 @@ app_license = "mit"
 # 		"on_trash": "method"
 # 	}
 # }
+doc_events = {
+    "Rider Salary Slip": {
+        "on_update": "rider_salary_slips.rider_salary_slips.doctype.rider_salary_slip.calc_total.calc_total",
+        "validate": "rider_salary_slips.rider_salary_slips.doctype.rider_salary_slip.calc_total.calc_total",
+    }
+}
 
 # Scheduled Tasks
 # ---------------
@@ -226,4 +232,3 @@ app_license = "mit"
 # default_log_clearing_doctypes = {
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
-

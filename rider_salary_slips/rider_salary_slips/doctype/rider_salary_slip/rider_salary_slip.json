@@ -1,0 +1,199 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:SS-{rider_id}-{MM}-{###}",
+ "creation": "2024-07-09 13:53:01.742747",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_cmvm",
+  "rider_id",
+  "rider_cpr",
+  "amended_from",
+  "column_break_qtdv",
+  "rider_name",
+  "company",
+  "payroll_info_section",
+  "column_break_pfgm",
+  "payroll_month",
+  "date_issue",
+  "column_break_oewi",
+  "start_date",
+  "end_date",
+  "payment_section",
+  "mode_of_payment",
+  "column_break_wqoz",
+  "total",
+  "particulars_section",
+  "salary_components",
+  "ref",
+  "salary_slip_info_section",
+  "structure_type",
+  "route"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_cmvm",
+   "fieldtype": "Section Break",
+   "label": "Rider Info"
+  },
+  {
+   "fieldname": "rider_id",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Rider ID"
+  },
+  {
+   "fieldname": "rider_cpr",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Rider CPR"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Rider Salary Slip",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "column_break_qtdv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "rider_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Rider Name"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Company",
+   "options": "Company"
+  },
+  {
+   "fieldname": "payroll_info_section",
+   "fieldtype": "Section Break",
+   "label": "Payroll Info"
+  },
+  {
+   "fieldname": "column_break_pfgm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "payroll_month",
+   "fieldtype": "Select",
+   "label": "Payroll Month",
+   "options": "\nJanuary\nFebruary\nMarch\nApril\nMay\nJune\nJuly\nAugust\nSeptember\nOctober\nNovember\nDecember"
+  },
+  {
+   "default": "Today",
+   "fieldname": "date_issue",
+   "fieldtype": "Date",
+   "label": "Date Issue"
+  },
+  {
+   "fieldname": "column_break_oewi",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "Start Date"
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "label": "End Date"
+  },
+  {
+   "fieldname": "payment_section",
+   "fieldtype": "Section Break",
+   "label": "Payment"
+  },
+  {
+   "default": "Wire Transfer",
+   "fieldname": "mode_of_payment",
+   "fieldtype": "Select",
+   "label": "Mode of Payment",
+   "options": "Wire Transfer"
+  },
+  {
+   "fieldname": "column_break_wqoz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Total",
+   "read_only": 1
+  },
+  {
+   "fieldname": "particulars_section",
+   "fieldtype": "Section Break",
+   "label": "Particulars "
+  },
+  {
+   "fieldname": "salary_components",
+   "fieldtype": "Table",
+   "label": "Salary Components",
+   "options": "Rider Salary Component"
+  },
+  {
+   "fieldname": "ref",
+   "fieldtype": "Data",
+   "label": "ref"
+  },
+  {
+   "fieldname": "salary_slip_info_section",
+   "fieldtype": "Section Break",
+   "label": "Salary Slip Info"
+  },
+  {
+   "fieldname": "structure_type",
+   "fieldtype": "Data",
+   "label": "Structure Type"
+  },
+  {
+   "fieldname": "route",
+   "fieldtype": "Data",
+   "label": "Route"
+  }
+ ],
+ "has_web_view": 1,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-08-04 19:16:34.810851",
+ "modified_by": "Administrator",
+ "module": "Rider Salary Slips",
+ "name": "Rider Salary Slip",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "select": 1,
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "route": "salary-slips",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
