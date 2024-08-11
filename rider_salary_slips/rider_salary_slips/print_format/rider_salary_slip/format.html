@@ -14,7 +14,7 @@
             <h2>
                 <div>Salary Slip</div>
             </h2>
-            <p
+            <!-- <p
                 style="
                     font-size: 8px;
                     position: absolute;
@@ -23,15 +23,19 @@
                 "
             >
                 TRN # 220011877600002
-            </p>
+            </p> -->
         </div>
         <hr style="background-color: black; height: 2px; margin: 0" />
     </div>
 
     <div class="flex-row" style="justify-content: end">
         <div class="flex-col" style="width: fit-content">
-            <div class="text-right">Date Issued: {{ doc.date_issue}}</div>
-            <div class="text-right">Ref: {{ doc.ref or doc.name}}</div>
+            <div class="text-right">
+                Date Issued: {{
+                frappe.utils.get_datetime(doc.date_issue).strftime('%d/%m/%Y')
+                }}
+            </div>
+            <div class="text-right">{{ doc.ref or doc.name}}</div>
         </div>
     </div>
 
@@ -40,7 +44,11 @@
     <table class="my-table" style="font-size: 15px; font-weight: 600">
         <tr>
             <td>Company</td>
-            <td>{{ doc.company }}</td>
+            <td>
+                {% if 'PKG' in doc.structure_type %} {{"New Packaging"}} {% else
+                %} {{"Key Arabia"}} {% endif %}
+                <!--{{ doc.company }}-->
+            </td>
         </tr>
         <tr>
             <td>Rider Name</td>
@@ -69,13 +77,20 @@
         </tr>
         <tr>
             <td class="text-left">Start Date:</td>
-            <td class="text-right">{{ doc.start_date }}</td>
+            <td class="text-right">
+                {{
+                frappe.utils.get_datetime(doc.start_date).strftime('%d/%m/%Y')
+                }}
+            </td>
             <td></td>
             <td></td>
         </tr>
         <tr>
             <td class="text-left">End Date:</td>
-            <td class="text-right">{{ doc.end_date }}</td>
+            <td class="text-right">
+                {{ frappe.utils.get_datetime(doc.end_date).strftime('%d/%m/%Y')
+                }}
+            </td>
             <td class="text-left">Payment Mode:</td>
             <td class="text-right">{{ doc.mode_of_payment }}</td>
         </tr>
@@ -117,7 +132,7 @@
         </div>
     </div>
     <!--<br />-->
-    <table class="my-table">
+    <table class="my-table" style="margin-top: 0">
         <tr>
             <td style="border: 0; text-align: center">
                 ADDRESS: BLOCK NO: 327, ROAD NO 2721, BLDG NO 1105, ADLIYA,
@@ -126,7 +141,9 @@
         </tr>
         <tr class="">
             <td style="border: 0; text-align: center">
-                Phone: 17601516/33610093
+                {% if 'PKG' in doc.structure_type %} {{"Phone:
+                +97333672301/+97334699849"}} {% else %} {{"Phone:
+                +97317601516/+97333610093"}} {% endif %}
             </td>
         </tr>
     </table>
