@@ -6,7 +6,7 @@ def calc_total(doc, event):
             comp.variable != None and comp.variable != 0
         ):
             comp.amount = comp.variable * comp.rate
-        if comp.amount != 0:
+        if comp.amount != None and comp.amount != 0:
             total += comp.amount
     # print(total)
     doc.total = total
