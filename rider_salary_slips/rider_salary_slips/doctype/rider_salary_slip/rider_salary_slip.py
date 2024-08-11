@@ -6,8 +6,9 @@ from frappe.model.document import Document
 from datetime import datetime
 from frappe.utils import add_to_date
 
+
 class RiderSalarySlip(Document):
-	def validate(self):
+    def validate(self):
         if not self.start_date:
             today = datetime.today()
             first_day_of_month = datetime(today.year, today.month, 1)
@@ -20,4 +21,3 @@ class RiderSalarySlip(Document):
         if not self.payroll_month:
             date = datetime.strptime(self.start_date, "%Y-%m-%d")
             self.payroll_month = date.strftime("%B")
-
