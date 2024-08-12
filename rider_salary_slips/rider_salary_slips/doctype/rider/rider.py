@@ -5,5 +5,5 @@
 from frappe.model.document import Document
 
 
-class Ride(Document):
+class Rider(Document):
 	pass
