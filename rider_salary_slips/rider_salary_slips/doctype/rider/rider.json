@@ -25,12 +25,13 @@
    "fieldname": "salary_slips",
    "fieldtype": "Table",
    "label": "Salary Slips",
-   "options": "Rider Salary Slips Table"
+   "options": "Rider Salary Slips Table",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-08-12 17:22:03.640529",
+ "modified": "2024-08-12 18:26:35.765160",
  "modified_by": "Administrator",
  "module": "Rider Salary Slips",
  "name": "Rider",

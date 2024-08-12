@@ -131,6 +131,7 @@ app_license = "mit"
 # }
 doc_events = {
     "Rider Salary Slip": {
+        "on_trash": "rider_salary_slips.events.on_trash_salary_slip",
         "on_update": "rider_salary_slips.events.on_update_salary_slip",
         "validate": "rider_salary_slips.events.on_update_salary_slip",
     }
