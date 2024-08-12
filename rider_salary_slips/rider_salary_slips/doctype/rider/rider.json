@@ -7,7 +7,8 @@
  "engine": "InnoDB",
  "field_order": [
   "rider_id",
-  "rider_cpr"
+  "rider_cpr",
+  "salary_slips"
  ],
  "fields": [
   {
@@ -19,11 +20,17 @@
    "fieldname": "rider_cpr",
    "fieldtype": "Int",
    "label": "Rider CPR"
+  },
+  {
+   "fieldname": "salary_slips",
+   "fieldtype": "Table",
+   "label": "Salary Slips",
+   "options": "Rider Salary Slips Table"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-08-11 17:44:39.853216",
+ "modified": "2024-08-12 17:22:03.640529",
  "modified_by": "Administrator",
  "module": "Rider Salary Slips",
  "name": "Rider",
