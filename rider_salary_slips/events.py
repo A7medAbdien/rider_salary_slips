@@ -15,14 +15,14 @@ def on_update_salary_slip(doc, ev):
     print("\n\n\n Salary slip updated")
     # Recalculate the total salary
     calc_total(doc, ev)
-    update_rider_salary_slips_table(doc, ev)
+    # update_rider_salary_slips_table(doc, ev)
 
 
 def on_trash_salary_slip(doc, ev):
     print("\n\n\n Salary slip trashed")
     # delete the rider salary slip table
-    if frappe.db.exists("Rider Salary Slips Table", doc.name):
-        frappe.delete_doc("Rider Salary Slips Table", doc.name)
+    # if frappe.db.exists("Rider Salary Slips Table", doc.name):
+    #     frappe.delete_doc("Rider Salary Slips Table", doc.name)
 
 
 def update_rider_salary_slips_table(doc, ev):
