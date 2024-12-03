@@ -24,12 +24,11 @@
   "mode_of_payment",
   "column_break_wqoz",
   "total",
-  "particulars_section",
-  "salary_components",
-  "ref",
   "salary_slip_info_section",
   "structure_type",
-  "route"
+  "particulars_section",
+  "salary_components",
+  "ref"
  ],
  "fields": [
   {
@@ -159,18 +158,11 @@
    "fieldname": "structure_type",
    "fieldtype": "Data",
    "label": "Structure Type"
-  },
-  {
-   "fieldname": "route",
-   "fieldtype": "Data",
-   "label": "Route"
   }
  ],
- "has_web_view": 1,
- "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-08-04 19:16:34.810851",
+ "modified": "2024-12-03 18:04:32.694770",
  "modified_by": "Administrator",
  "module": "Rider Salary Slips",
  "name": "Rider Salary Slip",
